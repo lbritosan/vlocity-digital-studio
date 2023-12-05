@@ -1,0 +1,7 @@
+[
+    "DataRaptor/MultiSite - ExtractAccountId",
+    "DataRaptor/MultiSite - ExtractPriceList",
+    "DataRaptor/MultiSite - TransformMasterQuoteOrderId",
+    "IntegrationProcedure/MultiSite_CreateMasterOrder",
+    "IntegrationProcedure/MultiSite_CreateMasterQuote"
+]

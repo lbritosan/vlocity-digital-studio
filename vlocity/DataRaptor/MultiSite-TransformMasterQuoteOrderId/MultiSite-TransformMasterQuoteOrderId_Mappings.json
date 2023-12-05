@@ -1,0 +1,17 @@
+[
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "json",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "MasterQuoteOrderId",
+        "%vlocity_namespace%__GlobalKey__c": "7fd51472-a74f-bedf-f91d-ea889538fd2e",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "records:Id",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "MultiSite - TransformMasterQuoteOrderIdCustom9856",
+        "%vlocity_namespace%__OMplusSyncEnabled__c": true,
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "MultiSite - TransformMasterQuoteOrderId",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    }
+]

@@ -1,0 +1,56 @@
+{
+    "%vlocity_namespace%__Active__c": true,
+    "%vlocity_namespace%__OmniScriptId__c": {
+        "Name": "CPQBulkReplace",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__OmniScript__c/CPQ/BulkReplace/Multi-Language",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__OmniScript__c"
+    },
+    "%vlocity_namespace%__ParentElementId__c": {
+        "%vlocity_namespace%__OmniScriptId__c": {
+            "Name": "CPQBulkReplace",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__OmniScript__c/CPQ/BulkReplace/Multi-Language",
+            "VlocityRecordSObjectType": "%vlocity_namespace%__OmniScript__c"
+        },
+        "Name": "Groups",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/CPQ/BulkReplace/Multi-Language/Groups",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__Element__c"
+    },
+    "%vlocity_namespace%__ParentElementName__c": "Groups",
+    "%vlocity_namespace%__ParentElementType__c": "Step",
+    "%vlocity_namespace%__PropertySet__c": {
+        "bStandalone": false,
+        "conditionType": "Hide if False",
+        "controlWidth": 12,
+        "customAttributes": [
+            {
+                "name": "parent-data",
+                "source": "true"
+            },
+            {
+                "name": "record-id",
+                "source": "%cartId%"
+            },
+            {
+                "name": "records",
+                "source": "%groupsEnabledDataSource%"
+            },
+            {
+                "name": "parent-attribute",
+                "source": "%COPGroupsEnabledParentDetails%"
+            }
+        ],
+        "disOnTplt": false,
+        "hide": false,
+        "lwcName": "cfCpqChangeOfPlanGroups",
+        "show": null
+    },
+    "%vlocity_namespace%__ReusableOmniScript__c": false,
+    "%vlocity_namespace%__Type__c": "Custom Lightning Web Component",
+    "Name": "cfCpqChangeOfPlanGroupsEnabled",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__Element__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/CPQ/BulkReplace/Multi-Language/cfCpqChangeOfPlanGroupsEnabled"
+}

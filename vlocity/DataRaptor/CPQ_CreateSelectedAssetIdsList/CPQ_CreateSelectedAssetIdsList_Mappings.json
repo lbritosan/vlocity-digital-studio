@@ -1,0 +1,35 @@
+[
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "Formula",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 0,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Formula",
+        "%vlocity_namespace%__FormulaOrder__c": 1,
+        "%vlocity_namespace%__FormulaResultPath__c": "Members:%vlocity_namespace%__SelectedAssetIds",
+        "%vlocity_namespace%__Formula__c": "SPLIT(Members:%vlocity_namespace%__SelectedAssetIds__c,',')",
+        "%vlocity_namespace%__GlobalKey__c": "781d9e3f-d73b-f56a-99e7-b12601f170cd",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "CPQ_CreateSelectedAssetIdsListCustom4499",
+        "%vlocity_namespace%__OMplusSyncEnabled__c": true,
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "CPQ_CreateSelectedAssetIdsList",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "json",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "Members:SelectedAssetIds",
+        "%vlocity_namespace%__DomainObjectFieldType__c": "List<String>",
+        "%vlocity_namespace%__GlobalKey__c": "53d9ed15-75bf-e596-d468-d8c96d66a768",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "Members:%vlocity_namespace%__SelectedAssetIds",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "CPQ_CreateSelectedAssetIdsListCustom3690",
+        "%vlocity_namespace%__OMplusSyncEnabled__c": true,
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "CPQ_CreateSelectedAssetIdsList",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    }
+]

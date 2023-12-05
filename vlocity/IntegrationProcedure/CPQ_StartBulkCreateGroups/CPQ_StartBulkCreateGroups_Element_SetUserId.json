@@ -1,0 +1,35 @@
+{
+    "%vlocity_namespace%__Active__c": true,
+    "%vlocity_namespace%__OmniScriptId__c": {
+        "Name": "CPQ_StartBulkCreateGroups",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "%vlocity_namespace%__OmniScript__c/CPQ/StartBulkCreateGroups/Procedure",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__OmniScript__c"
+    },
+    "%vlocity_namespace%__PropertySet__c": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "addMembersAsyncProcessNameForOrder": "Add Members for %createCartData:orderName%",
+            "addMembersAsyncProcessNameForQuote": "Add Members for %createCartData:quoteName%",
+            "createGroupsAsyncProcessNameForOrder": "Create Groups for %createCartData:orderName%",
+            "createGroupsAsyncProcessNameForQuote": "Create Groups for %createCartData:quoteName%",
+            "timestamp": "=NOW()",
+            "userID": "= $Vlocity.UserId"
+        },
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "show": null
+    },
+    "%vlocity_namespace%__ReusableOmniScript__c": false,
+    "%vlocity_namespace%__Type__c": "Set Values",
+    "Name": "SetUserId",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__Element__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/CPQ/StartBulkCreateGroups/Procedure/SetUserId"
+}

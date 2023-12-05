@@ -1,0 +1,25 @@
+{
+    "%vlocity_namespace%__AdditionalInformation__c": "This OS splits an enterprise Order into multiple Sub Orders and then submits them in Parallel .",
+    "%vlocity_namespace%__DisableMetadataCache__c": false,
+    "%vlocity_namespace%__ElementTypeToHTMLTemplateList__c": "{\"ElementTypeToHTMLTemplateList\":[]}",
+    "%vlocity_namespace%__Element__c": [
+        "CPQ_SplitAndSubmitOrder_English_Element_CPQ_StartBulkSplitOrder.json",
+        "CPQ_SplitAndSubmitOrder_English_Element_SubmitOrderMessageStep.json",
+        "CPQ_SplitAndSubmitOrder_English_Element_OrderSuccessfullySubmitted.json",
+        "CPQ_SplitAndSubmitOrder_English_Element_LineBreak.json",
+        "CPQ_SplitAndSubmitOrder_English_Element_NavigateToOrder.json"
+    ],
+    "%vlocity_namespace%__IsLwcEnabled__c": true,
+    "%vlocity_namespace%__IsProcedure__c": false,
+    "%vlocity_namespace%__IsReusable__c": false,
+    "%vlocity_namespace%__IsTest__c": false,
+    "%vlocity_namespace%__Language__c": "English",
+    "%vlocity_namespace%__OmniProcessType__c": "OmniScript",
+    "%vlocity_namespace%__PropertySet__c": "CPQ_SplitAndSubmitOrder_English_PropertySet.json",
+    "%vlocity_namespace%__SubType__c": "SplitAndSubmitOrder",
+    "%vlocity_namespace%__Type__c": "CPQ",
+    "Name": "SplitAndSubmitOrder",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "%vlocity_namespace%__OmniScript__c",
+    "VlocityRecordSourceKey": "%vlocity_namespace%__OmniScript__c/CPQ/SplitAndSubmitOrder/English"
+}
