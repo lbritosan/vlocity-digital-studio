@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>In Approval Process</fullName>
+        <default>false</default>
+        <label>In Approval Process</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Activated</fullName>
+        <default>false</default>
+        <label>Activated</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Draft</fullName>
+        <default>false</default>
+        <label>Draft</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Rejected internally</fullName>
+        <default>false</default>
+        <label>Rejected internally</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Negotiating</fullName>
+        <default>false</default>
+        <label>Negotiating</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Awaiting Signature</fullName>
+        <default>false</default>
+        <label>Awaiting Signature</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Signed</fullName>
+        <default>false</default>
+        <label>Signed</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Expired</fullName>
+        <default>false</default>
+        <label>Expired</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Terminated</fullName>
+        <default>false</default>
+        <label>Terminated</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Cancelled</fullName>
+        <default>false</default>
+        <label>Cancelled</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Signature Declined</fullName>
+        <default>false</default>
+        <label>Signature Declined</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Awaiting Approval</fullName>
+        <default>false</default>
+        <label>Awaiting Approval</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Approved</fullName>
+        <default>false</default>
+        <label>Approved</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Rejected</fullName>
+        <default>false</default>
+        <label>Rejected</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Contract Negotiating</fullName>
+        <default>false</default>
+        <label>Contract Negotiating</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Contract Awaiting Signature</fullName>
+        <default>false</default>
+        <label>Contract Awaiting Signature</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Contract Signature Declined</fullName>
+        <default>false</default>
+        <label>Contract Signature Declined</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Contract Signed</fullName>
+        <default>false</default>
+        <label>Contract Signed</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Canceled</fullName>
+        <default>false</default>
+        <label>Canceled</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Contract Expired</fullName>
+        <default>false</default>
+        <label>Contract Expired</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Contract Terminated</fullName>
+        <default>false</default>
+        <label>Contract Terminated</label>
+    </standardValue>
+</StandardValueSet>

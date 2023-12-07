@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(LEN(BillingState)=0, "None", 
+IF(CONTAINS("AK:AZ:CA:CO:HA:ID:KS:MT:NV:NM:OK:OR:TX:UT:WA:WY:BC", BillingState), "West", 
+IF(CONTAINS("ON", BillingState), "Central", 
+IF(CONTAINS("CT:ME:MA:NH:NY:PA:RI:VT", BillingState), "East", 
+IF(CONTAINS("AL:AR:DC:DE:FL:GA:KY:LA:MD:MS:NC:NJ:SC:TN:VA:WV", BillingState), "South", 
+IF(CONTAINS("IL:IN:IA:MI:MN:MO:NE:ND:OH:SD:WI", BillingState), "North", "Unknown"))))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Region</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

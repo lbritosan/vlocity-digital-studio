@@ -1,0 +1,29 @@
+Ex-VPR 1: Task 2:
+
+Bundle - virtual price
+
+Ex-VPR 1: Task 3:
+
+Mobile plan order
+
+Ex-VPR 2: Task 2:
+$49.00 one-time price
+
+Ex-VPR 3: Task 1:
+
+TP-12M
+12-month plan
+
+TP-36M
+36-month plan
+
+Ex-VPR 3: Task 2:
+
+TPOL-FIRSTDAY
+First day of month to cycle end
+
+TPOL-PURCHDATE
+Purchase to end of plan
+
+
+

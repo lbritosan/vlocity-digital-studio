@@ -1,0 +1,32 @@
+[
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "json",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "products",
+        "%vlocity_namespace%__GlobalKey__c": "0cf929dd-c7c4-4c06-a646-5da17760798d",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "products",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "CPQSupportCatalogsForTypeaheadDRCustom8823",
+        "%vlocity_namespace%__OMplusSyncEnabled__c": true,
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "CPQSupportCatalogsForTypeaheadDR",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    },
+    {
+        "%vlocity_namespace%__DomainObjectAPIName__c": "json",
+        "%vlocity_namespace%__DomainObjectCreationOrder__c": 1,
+        "%vlocity_namespace%__DomainObjectFieldAPIName__c": "products:name",
+        "%vlocity_namespace%__GlobalKey__c": "4fa2d17e-16c5-94c3-5a24-6797b4ca1fec",
+        "%vlocity_namespace%__InterfaceFieldAPIName__c": "products:Name",
+        "%vlocity_namespace%__IsDisabled__c": false,
+        "%vlocity_namespace%__IsRequiredForUpsert__c": false,
+        "%vlocity_namespace%__MapId__c": "CPQSupportCatalogsForTypeaheadDRCustom6921",
+        "%vlocity_namespace%__OMplusSyncEnabled__c": true,
+        "%vlocity_namespace%__UpsertKey__c": false,
+        "Name": "CPQSupportCatalogsForTypeaheadDR",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "%vlocity_namespace%__DRMapItem__c"
+    }
+]

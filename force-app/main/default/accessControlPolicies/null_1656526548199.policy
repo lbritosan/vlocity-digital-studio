@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xacml3:Policy
+    xmlns:xacml3="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17"
+    PolicyId="00D8Z000000tW6f-User"
+    RuleCombiningAlgId="urn:oasis:names:tc:xacml:3.0:rule-combining-algorithm:deny-unless-permit"
+    Version="1.0">
+    <xacml3:Description />
+    <xacml3:PolicyDefaults>
+        <xacml3:XPathVersion>http://www.w3.org/TR/1999/REC-xpath-19991116</xacml3:XPathVersion>
+    </xacml3:PolicyDefaults>
+    <xacml3:Target>
+        <xacml3:AnyOf>
+            <xacml3:AllOf>
+                <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                    <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">User</xacml3:AttributeValue>
+                    <xacml3:AttributeDesignator
+                        AttributeId="urn:oasis:names:tc:xacml:1.0:resource:resource-id"
+                        DataType="http://www.w3.org/2001/XMLSchema#string"
+                        Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource"
+                        MustBePresent="true" />
+                </xacml3:Match>
+            </xacml3:AllOf>
+        </xacml3:AnyOf>
+    </xacml3:Target>
+    <!-- FRR TYPE RULE below -->
+    <xacml3:Rule Effect="Permit" xmlns:xacml3="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17"
+                 RuleId="urn:oasis:names:tc:xacml:3.0:example:ruleid:query-0lr8Z000000sYK8">
+        <xacml3:Description>Field Restriction Rule for Portal PersonalInfo_EPIM</xacml3:Description>
+        <xacml3:Target>
+            <xacml3:AnyOf>
+                <xacml3:AllOf>
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">FieldRestrict</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                                AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-type"
+                                DataType="http://www.w3.org/2001/XMLSchema#string"
+                                Category="urn:oasis:names:tc:xacml:3.0:attribute-category:action"
+                                MustBePresent="true"/>
+                    </xacml3:Match>
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">query</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                                AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id"
+                                DataType="http://www.w3.org/2001/XMLSchema#string"
+                                Category="urn:oasis:names:tc:xacml:3.0:attribute-category:action"
+                                MustBePresent="true"/>
+                    </xacml3:Match>
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">0IX8Z000000TRsg</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                                AttributeId="urn:oasis:names:tc:xacml:1.0:resource:classification-id"
+                                DataType="http://www.w3.org/2001/XMLSchema#string"
+                                Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource"
+                                MustBePresent="true"/>
+                    </xacml3:Match>
+                    <!-- Match template for UserCriteria formula which is of type field1=value1 -->
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">1</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                            AttributeId="urn:oasis:names:tc:xacml:1.0:subject:CASE($User.UserType,'Standard',0,'AutomatedProcess',0,'CloudIntegrationUser',0,'LicenseManager',0,'Guest',0,1)"
+                            DataType="http://www.w3.org/2001/XMLSchema#string"
+                            Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+                            MustBePresent="true"/>
+                    </xacml3:Match>
+
+                </xacml3:AllOf>
+            </xacml3:AnyOf>
+        </xacml3:Target>
+        <xacml3:ObligationExpressions>
+            <xacml3:ObligationExpression ObligationId="fieldRestrictionQueryFilter"
+                                         FulfillOn="Permit">
+                <xacml3:AttributeAssignmentExpression
+                        AttributeId="urn:oasis:names:tc:xacml:1.0:filter"
+                        Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource">
+                    <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">&lt;match&gt;&lt;arg1&gt;Id&lt;/arg1&gt;&lt;arg2&gt;$User.Id&lt;/arg2&gt;&lt;/match&gt;</xacml3:AttributeValue>
+                </xacml3:AttributeAssignmentExpression>
+            </xacml3:ObligationExpression>
+        </xacml3:ObligationExpressions>
+        <xacml3:AdviceExpressions>
+            <xacml3:AdviceExpression AdviceId="fieldRestrictionMaskReason" AppliesTo="Permit">
+                <xacml3:AttributeAssignmentExpression
+                        AttributeId="urn:oasis:names:tc:xacml:1.0:reason"
+                        Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource">
+                    <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Field Restriction Rule for Portal PersonalInfo_EPIM</xacml3:AttributeValue>
+                </xacml3:AttributeAssignmentExpression>
+            </xacml3:AdviceExpression>
+        </xacml3:AdviceExpressions>
+    </xacml3:Rule>
+    <xacml3:Rule Effect="Permit" xmlns:xacml3="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17"
+                 RuleId="urn:oasis:names:tc:xacml:3.0:example:ruleid:access-0lr8Z000000sYK8">
+    <xacml3:Description>Field Restriction Rule for Portal PersonalInfo_EPIM</xacml3:Description>
+        <xacml3:Target>
+            <xacml3:AnyOf>
+                <xacml3:AllOf>
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">FieldRestrict</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                                AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-type"
+                                DataType="http://www.w3.org/2001/XMLSchema#string"
+                                Category="urn:oasis:names:tc:xacml:3.0:attribute-category:action"
+                                MustBePresent="true"/>
+                    </xacml3:Match>
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">access</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                                AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id"
+                                DataType="http://www.w3.org/2001/XMLSchema#string"
+                                Category="urn:oasis:names:tc:xacml:3.0:attribute-category:action"
+                                MustBePresent="true"/>
+                    </xacml3:Match>
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">0IX8Z000000TRsg</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                                AttributeId="urn:oasis:names:tc:xacml:1.0:resource:classification-id"
+                                DataType="http://www.w3.org/2001/XMLSchema#string"
+                                Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource"
+                                MustBePresent="true"/>
+                    </xacml3:Match>
+                    
+                    <!-- Match template for UserCriteria formula which is of type field1=value1 -->
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">1</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                            AttributeId="urn:oasis:names:tc:xacml:1.0:subject:CASE($User.UserType,'Standard',0,'AutomatedProcess',0,'CloudIntegrationUser',0,'LicenseManager',0,'Guest',0,1)"
+                            DataType="http://www.w3.org/2001/XMLSchema#string"
+                            Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+                            MustBePresent="true"/>
+                    </xacml3:Match>
+
+                </xacml3:AllOf>
+            </xacml3:AnyOf>
+        </xacml3:Target>
+        <!-- Condition template for RecordFilter formula as it is of type field1=field2 -->
+        <xacml3:Condition>
+            <xacml3:Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:any-of-any">
+                <xacml3:Function FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal"/>
+                <xacml3:AttributeDesignator
+                    AttributeId="urn:oasis:names:tc:xacml:1.0:subject:Id"
+                    DataType="http://www.w3.org/2001/XMLSchema#string"
+                    Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+                    MustBePresent="true"/>
+                <xacml3:AttributeDesignator
+                    AttributeId="urn:oasis:names:tc:xacml:1.0:subject:$User.Id"
+                    DataType="http://www.w3.org/2001/XMLSchema#string"
+                    Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+                    MustBePresent="true"/>
+            </xacml3:Apply>
+        </xacml3:Condition>
+
+    </xacml3:Rule>
+
+    <!-- FRR TYPE RULE below -->
+    <xacml3:Rule Effect="Permit" xmlns:xacml3="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17"
+                 RuleId="urn:oasis:names:tc:xacml:3.0:example:ruleid:query-0lr8Z000000sYK9">
+        <xacml3:Description>Field Restriction Rule for Guest PersonalInfo_EPIM</xacml3:Description>
+        <xacml3:Target>
+            <xacml3:AnyOf>
+                <xacml3:AllOf>
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">FieldRestrict</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                                AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-type"
+                                DataType="http://www.w3.org/2001/XMLSchema#string"
+                                Category="urn:oasis:names:tc:xacml:3.0:attribute-category:action"
+                                MustBePresent="true"/>
+                    </xacml3:Match>
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">query</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                                AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id"
+                                DataType="http://www.w3.org/2001/XMLSchema#string"
+                                Category="urn:oasis:names:tc:xacml:3.0:attribute-category:action"
+                                MustBePresent="true"/>
+                    </xacml3:Match>
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">0IX8Z000000TRsg</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                                AttributeId="urn:oasis:names:tc:xacml:1.0:resource:classification-id"
+                                DataType="http://www.w3.org/2001/XMLSchema#string"
+                                Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource"
+                                MustBePresent="true"/>
+                    </xacml3:Match>
+                    <!-- Match template for UserCriteria formula which is of type field1=value1 -->
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">1</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                            AttributeId="urn:oasis:names:tc:xacml:1.0:subject:CASE($User.UserType,'Guest',1,0)"
+                            DataType="http://www.w3.org/2001/XMLSchema#string"
+                            Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+                            MustBePresent="true"/>
+                    </xacml3:Match>
+
+                </xacml3:AllOf>
+            </xacml3:AnyOf>
+        </xacml3:Target>
+        <xacml3:ObligationExpressions>
+            <xacml3:ObligationExpression ObligationId="fieldRestrictionQueryFilter"
+                                         FulfillOn="Permit">
+                <xacml3:AttributeAssignmentExpression
+                        AttributeId="urn:oasis:names:tc:xacml:1.0:filter"
+                        Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource">
+                    <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">&lt;match&gt;&lt;arg1&gt;Id&lt;/arg1&gt;&lt;arg2&gt;NEVER_TRUE&lt;/arg2&gt;&lt;/match&gt;</xacml3:AttributeValue>
+                </xacml3:AttributeAssignmentExpression>
+            </xacml3:ObligationExpression>
+        </xacml3:ObligationExpressions>
+        <xacml3:AdviceExpressions>
+            <xacml3:AdviceExpression AdviceId="fieldRestrictionMaskReason" AppliesTo="Permit">
+                <xacml3:AttributeAssignmentExpression
+                        AttributeId="urn:oasis:names:tc:xacml:1.0:reason"
+                        Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource">
+                    <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">Field Restriction Rule for Guest PersonalInfo_EPIM</xacml3:AttributeValue>
+                </xacml3:AttributeAssignmentExpression>
+            </xacml3:AdviceExpression>
+        </xacml3:AdviceExpressions>
+    </xacml3:Rule>
+    <xacml3:Rule Effect="Permit" xmlns:xacml3="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17"
+                 RuleId="urn:oasis:names:tc:xacml:3.0:example:ruleid:access-0lr8Z000000sYK9">
+    <xacml3:Description>Field Restriction Rule for Guest PersonalInfo_EPIM</xacml3:Description>
+        <xacml3:Target>
+            <xacml3:AnyOf>
+                <xacml3:AllOf>
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">FieldRestrict</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                                AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-type"
+                                DataType="http://www.w3.org/2001/XMLSchema#string"
+                                Category="urn:oasis:names:tc:xacml:3.0:attribute-category:action"
+                                MustBePresent="true"/>
+                    </xacml3:Match>
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">access</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                                AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id"
+                                DataType="http://www.w3.org/2001/XMLSchema#string"
+                                Category="urn:oasis:names:tc:xacml:3.0:attribute-category:action"
+                                MustBePresent="true"/>
+                    </xacml3:Match>
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">0IX8Z000000TRsg</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                                AttributeId="urn:oasis:names:tc:xacml:1.0:resource:classification-id"
+                                DataType="http://www.w3.org/2001/XMLSchema#string"
+                                Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource"
+                                MustBePresent="true"/>
+                    </xacml3:Match>
+                    
+                    <!-- Match template for UserCriteria formula which is of type field1=value1 -->
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">1</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                            AttributeId="urn:oasis:names:tc:xacml:1.0:subject:CASE($User.UserType,'Guest',1,0)"
+                            DataType="http://www.w3.org/2001/XMLSchema#string"
+                            Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+                            MustBePresent="true"/>
+                    </xacml3:Match>
+
+                    <!-- Match template for RecordFilter formula which is of type field1=value1 -->
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">NEVER_TRUE</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                            AttributeId="urn:oasis:names:tc:xacml:1.0:subject:Id"
+                            DataType="http://www.w3.org/2001/XMLSchema#string"
+                            Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+                            MustBePresent="true"/>
+                    </xacml3:Match>
+
+                </xacml3:AllOf>
+            </xacml3:AnyOf>
+        </xacml3:Target>
+    </xacml3:Rule>
+
+    <xacml3:Rule Effect="Permit" xmlns:xacml3="urn:oasis:names:tc:xacml:3.0:core:schema:wd-17"
+                 RuleId="urn:oasis:names:tc:xacml:3.0:example:ruleid:field-access-default-permit">
+        <xacml3:Description>Access Default FRR Permit Rule</xacml3:Description>
+        <xacml3:Target>
+            <xacml3:AnyOf>
+                <xacml3:AllOf>
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">FieldRestrict</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                                AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-type"
+                                DataType="http://www.w3.org/2001/XMLSchema#string"
+                                Category="urn:oasis:names:tc:xacml:3.0:attribute-category:action"
+                                MustBePresent="true" />
+                    </xacml3:Match>
+                    <xacml3:Match MatchId="urn:oasis:names:tc:xacml:1.0:function:string-equal">
+                        <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">access</xacml3:AttributeValue>
+                        <xacml3:AttributeDesignator
+                                AttributeId="urn:oasis:names:tc:xacml:1.0:action:action-id"
+                                DataType="http://www.w3.org/2001/XMLSchema#string"
+                                Category="urn:oasis:names:tc:xacml:3.0:attribute-category:action"
+                                MustBePresent="true"/>
+                    </xacml3:Match>
+                </xacml3:AllOf>
+            </xacml3:AnyOf>
+        </xacml3:Target>
+        <xacml3:Condition>
+            <xacml3:Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:not">
+                <xacml3:Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:or">
+                    <xacml3:Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:and">
+                        <xacml3:Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:any-of-any">
+                            <xacml3:Function FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal" />
+                            <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">0IX8Z000000TRsg</xacml3:AttributeValue>
+                            <xacml3:AttributeDesignator
+                                    AttributeId="urn:oasis:names:tc:xacml:1.0:resource:classification-id"
+                                    DataType="http://www.w3.org/2001/XMLSchema#string"
+                                    Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource"
+                                    MustBePresent="true"/>
+                        </xacml3:Apply>
+                        
+				    <xacml3:Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:any-of-any">
+				    	<!-- Equality field-value default permit expression -->
+        				<xacml3:Function FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal" />
+        				<xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">1</xacml3:AttributeValue>
+        				<xacml3:AttributeDesignator
+            				AttributeId="urn:oasis:names:tc:xacml:1.0:subject:CASE($User.UserType,'Standard',0,'AutomatedProcess',0,'CloudIntegrationUser',0,'LicenseManager',0,'Guest',0,1)"
+        	    			DataType="http://www.w3.org/2001/XMLSchema#string"
+        		    		Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+        			    	MustBePresent="true"/>
+				    </xacml3:Apply>
+
+                    </xacml3:Apply>
+                    <xacml3:Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:and">
+                        <xacml3:Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:any-of-any">
+                            <xacml3:Function FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal" />
+                            <xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">0IX8Z000000TRsg</xacml3:AttributeValue>
+                            <xacml3:AttributeDesignator
+                                    AttributeId="urn:oasis:names:tc:xacml:1.0:resource:classification-id"
+                                    DataType="http://www.w3.org/2001/XMLSchema#string"
+                                    Category="urn:oasis:names:tc:xacml:3.0:attribute-category:resource"
+                                    MustBePresent="true"/>
+                        </xacml3:Apply>
+                        
+				    <xacml3:Apply FunctionId="urn:oasis:names:tc:xacml:1.0:function:any-of-any">
+				    	<!-- Equality field-value default permit expression -->
+        				<xacml3:Function FunctionId="urn:oasis:names:tc:xacml:1.0:function:string-equal" />
+        				<xacml3:AttributeValue DataType="http://www.w3.org/2001/XMLSchema#string">1</xacml3:AttributeValue>
+        				<xacml3:AttributeDesignator
+            				AttributeId="urn:oasis:names:tc:xacml:1.0:subject:CASE($User.UserType,'Guest',1,0)"
+        	    			DataType="http://www.w3.org/2001/XMLSchema#string"
+        		    		Category="urn:oasis:names:tc:xacml:1.0:subject-category:access-subject"
+        			    	MustBePresent="true"/>
+				    </xacml3:Apply>
+
+                    </xacml3:Apply>
+
+                </xacml3:Apply>
+            </xacml3:Apply>
+        </xacml3:Condition>
+    </xacml3:Rule>
+</xacml3:Policy>
